@@ -48,11 +48,13 @@
 	<xacro:property name="leg_y_offset" value=".125" />
 
 
-	<link name="kdl_dummy_root" />
+	<!-- <link name="kdl_dummy_root" />
 	<joint name="kdl_dummy_root_to_base" type="fixed">
 		<parent link="kdl_dummy_root"/>
 		<child link="base"/>
-	</joint>
+	</joint> -->
+
+
 
 	<!-- base body -->
 	<link name="base">
@@ -135,8 +137,8 @@
     </gazebo>	
 
 
-<include filename="$(find pr2_description)/urdf/sensors/hokuyo_lx30_laser.urdf.xacro" />
-<xacro:hokuyo_lx30_laser_v0 name="laser_scan_link" parent="base" ros_topic="/scan"
+<xacro:include filename="$(find pr2_description)/urdf/sensors/hokuyo_lx30_laser.urdf.xacro" />
+<xacro:hokuyo_lx30_laser_v0 name="laser_link" parent="base" ros_topic="/scan"
 		update_rate="40" min_angle="-2.3" max_angle="2.3" >
 				<origin xyz="${0.04 - 0 - 0.04} 0.1 0.3" rpy="0 0 0" />
 		</xacro:hokuyo_lx30_laser_v0>
