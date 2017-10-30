@@ -1,11 +1,11 @@
 <launch>
 
-  <node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0 0 0 0 0 0 map odom 100"/>
-
+<!--   <node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0 0 0 0 0 0 map odom 100"/>
+ -->
   <node pkg="tf" type="static_transform_publisher" name="world_to_map" args="0 0 0 0 0 0 base_link base 100"/>
 
-  <node pkg="tf" type="static_transform_publisher" name="world_to_map1" args="0 0 0 0 0 0 laser_link_link laser_link 100"/>
-
+<!--   <node pkg="tf" type="static_transform_publisher" name="world_to_map1" args="0 0 0 0 0 0 laser_link_link laser_link 100"/>
+ -->
   <!-- Load gazebo snake monster simulation by calling launch file and use the joint state publisher below instead of the one in this launch file -->
   <include file="$(find snake_monster)/launch/gazebo.launch">
     <arg name="run_state_publisher" value="false" />
@@ -23,11 +23,11 @@
   </node>
 
   <!-- call with walk:=true to start walking controller node with gazebo -->
-  <arg name="walk" default="false" />
+ <!--  <arg name="walk" default="false" />
   <group if="$(arg walk)">
     <node name="walking_controller" pkg="snake_monster_control" type="walking_controller.py" />
   </group>
-
+ -->
   <!-- <node name="control_messager" pkg="snake_monster_control" type="control_messager" /> -->
 
   <node pkg="snake_monster_control" type="tf_broad.py" name="tf_node">
