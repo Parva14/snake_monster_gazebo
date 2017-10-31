@@ -15,8 +15,8 @@
 #map_type: costmap
 
 robot_base_frame: base_link
-update_frequency: 5.0
-publish_frequency: 4.0
+update_frequency: 8.0
+publish_frequency: 6.0
 transform_tolerance: 0.5
 
 # plugins:
@@ -35,7 +35,7 @@ static:
     subscribe_to_updates: true
 
 #The footprint of the robot and associated padding
-footprint: [[-0.25, -0.25], [-0.25, 0.25], [0,0.4], [0.25, 0.25], [0.25, -0.25]]
+footprint: [[-0.35, -0.35], [-0.35, 0.35], [0,0.55], [0.35, 0.35], [0.35, -0.35]]
 footprint_padding: 0.2
 
 #Cost function parameters
@@ -43,7 +43,7 @@ inflation_radius: 4
 cost_scaling_factor: 20.0
 
 #The cost at which a cell is considered an obstacle when a map is read from the map_server
-lethal_cost_threshold: 20
+lethal_cost_threshold: 10
 
 #Configuration for the sensors that the costmap will use to update a map
 observation_sources: scan

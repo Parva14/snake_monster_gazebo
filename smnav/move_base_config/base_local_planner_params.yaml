@@ -1,18 +1,18 @@
 #For full documentation of the parameters in this file, and a list of all the
 #parameters available for TrajectoryPlannerROS, please see
 #http://www.ros.org/wiki/base_local_planner
-NavfnROS:
+GlobalPlanner:
   allow_unknown: true # Specifies whether or not to allow navfn to create plans that traverse unknown space.
   default_tolerance: 0.1 # A tolerance on the goal point for the planner.
   use_dijkstra: true
-  use_quadratic: false
-  use_grid_path: true
-  old_navfn_behavior: true
-  recovery_behavior_enabled: false
-  visualize_potential: true
+  use_quadratic: true
+  use_grid_path: false
+  old_navfn_behavior: false
+  recovery_behavior_enabled: true
+  visualize_potential: false
   #cost_factor: 0.55
   #neutral_cost: 66
-  lethal_cost: 20
+  lethal_cost: 1
 
 TrajectoryPlannerROS:
   #Set the acceleration limits of the robot
@@ -45,20 +45,20 @@ TrajectoryPlannerROS:
   latch_xy_goal_tolerance: false
 
   #We'll configure how long and with what granularity we'll forward simulate trajectories
-  sim_time: 0.6
-  sim_granularity: 0.4
+  sim_time: 0.7
+  sim_granularity: 0.35
 
   vx_samples: 75
   vtheta_samples: 4
 
   #Parameters for scoring trajectories
   #goal_distance_bias: 128
-  #path_distance_bias: 256
-  occdist_scale: 2
+  path_distance_bias: 128
+  occdist_scale: 1.2
   heading_lookahead: 0.325
 
-  pdist_scale: 4
-  gdist_scale: 3
+  pdist_scale: 2.5
+  gdist_scale: 4.5
   # heading_lookahead: 2
   # heading_scoring: true
   # heading_scoring_timestep: 1
