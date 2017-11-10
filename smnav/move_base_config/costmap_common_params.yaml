@@ -34,8 +34,8 @@ static:
     subscribe_to_updates: true
 
 #The footprint of the robot and associated padding
-footprint: [[-0.05, -0.05], [-0.05, 0.05], [0,0.15], [0.05, 0.05], [0.05, -0.05]]
-footprint_padding: 0
+footprint: [[-0.25, -0.10], [-0.25, 0.10], [0,0.25], [0.25, 0.10], [0.25, -0.10]]
+footprint_padding: 0.4
 
 #Cost function parameters
 inflation_radius: 0.55

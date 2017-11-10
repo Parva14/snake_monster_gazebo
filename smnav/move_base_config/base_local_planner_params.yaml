@@ -4,7 +4,7 @@
 GlobalPlanner:
   allow_unknown: true # Specifies whether or not to allow navfn to create plans that traverse unknown space.
   default_tolerance: 0.1 # A tolerance on the goal point for the planner.
-  use_dijkstra: true
+  use_dijkstra: false
   use_quadratic: true
   use_grid_path: false
   old_navfn_behavior: false
@@ -12,65 +12,65 @@ GlobalPlanner:
   visualize_potential: false
   #cost_factor: 0.55
   #neutral_cost: 66
-  lethal_cost: 1
+  lethal_cost: 10
 
-TrajectoryPlannerROS:
-  #Set the acceleration limits of the robot
-  acc_lim_theta: 2.5 
-  acc_lim_x: 20
-  acc_lim_y: 0
+# TrajectoryPlannerROS:
+#   #Set the acceleration limits of the robot
+#   acc_lim_theta: 2.5 
+#   acc_lim_x: 20
+#   acc_lim_y: 0
 
-  # #Set the velocity limits of the robot
-  max_vel_x: 20
-  min_vel_x: 0.1
-  # # max_rotational_vel: 2.0
-  # # min_rotational_vel: -1.0
-  # # min_in_place_rotational_vel: -3
-  # # max_in_place_rotational_vel: 3
+#   # #Set the velocity limits of the robot
+#   max_vel_x: 20
+#   min_vel_x: 0.1
+#   # # max_rotational_vel: 2.0
+#   # # min_rotational_vel: -1.0
+#   # # min_in_place_rotational_vel: -3
+#   # # max_in_place_rotational_vel: 3
 
-  # #controller_frequency: 10
+#   # #controller_frequency: 10
 
-  # #The velocity the robot will command when trying to escape from a stuck situation
-  # escape_vel: -5
+#   # #The velocity the robot will command when trying to escape from a stuck situation
+#   # escape_vel: -5
   
-  # #For this example, we'll use a holonomic robot
-  holonomic_robot: false
+#   # #For this example, we'll use a holonomic robot
+#   holonomic_robot: false
 
-  # #Since we're using a holonomic robot, we'll set the set of y velocities it will sample
+#   # #Since we're using a holonomic robot, we'll set the set of y velocities it will sample
   
 
-  # #Set the tolerance on achieving a goal
-  xy_goal_tolerance: 0.01
-  yaw_goal_tolerance: 0.01
-  latch_xy_goal_tolerance: false
+#   # #Set the tolerance on achieving a goal
+#   xy_goal_tolerance: 0.01
+#   yaw_goal_tolerance: 0.01
+#   latch_xy_goal_tolerance: false
 
-  # #We'll configure how long and with what granularity we'll forward simulate trajectories
-  sim_time: 0.8
-  sim_granularity: 0.4
+#   # #We'll configure how long and with what granularity we'll forward simulate trajectories
+#   sim_time: 0.8
+#   sim_granularity: 0.4
 
-  vx_samples: 75
-  vtheta_samples: 4
+#   vx_samples: 75
+#   vtheta_samples: 4
 
-  # #Parameters for scoring trajectories
-  # #goal_distance_bias: 128
-  path_distance_bias: 90
-  occdist_scale: 0.5
-  heading_lookahead: 0.7
+#   # #Parameters for scoring trajectories
+#   # #goal_distance_bias: 128
+#   path_distance_bias: 90
+#   occdist_scale: 0.5
+#   heading_lookahead: 0.7
 
-  pdist_scale: 4
-  gdist_scale: 2
-  # # # heading_lookahead: 2
-  # # heading_scoring: true
-  # # heading_scoring_timestep: 1
-  # escape_reset_dist: 0.05
-  # escape_reset_theta: 0.1
-  simple_attractor: true
-  # #We'll use the Dynamic Window Approach to control instead of Trajectory Rollout for this example
-  dwa: true
+#   pdist_scale: 4
+#   gdist_scale: 2
+#   # # # heading_lookahead: 2
+#   # # heading_scoring: true
+#   # # heading_scoring_timestep: 1
+#   # escape_reset_dist: 0.05
+#   # escape_reset_theta: 0.1
+#   simple_attractor: true
+#   # #We'll use the Dynamic Window Approach to control instead of Trajectory Rollout for this example
+#   dwa: true
 
-  # #How far the robot must travel before oscillation flags are reset
-  # oscillation_reset_dist: 1
+#   # #How far the robot must travel before oscillation flags are reset
+#   # oscillation_reset_dist: 1
 
-  # #Eat up the plan as the robot moves along it
-  prune_plan: true
-  meter_scoring: false
+#   # #Eat up the plan as the robot moves along it
+#   prune_plan: true
+#   meter_scoring: false

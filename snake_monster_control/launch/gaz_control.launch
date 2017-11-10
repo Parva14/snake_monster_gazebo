@@ -33,7 +33,7 @@
   <node pkg="snake_monster_control" type="tf_broad.py" name="tf_node">
   </node>
 
-  <node pkg="cpg_snake" type="lol.py" name="control_node">
+<!--   <node pkg="cpg_snake" type="lol.py" name="control_node">
   </node>
-	  
+	   -->
 </launch>
